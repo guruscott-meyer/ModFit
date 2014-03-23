@@ -1,0 +1,68 @@
+<html>
+<h5>Introducing:</h5>
+<center>
+<h1>ModFit ver 0.5</h1>
+<h5>by</h5>
+<h3>Scott Meyer</h3>
+An applet written for MTH(CIS)300.<br>
+Requires JVM 1.4.1<br>
+If you don't see the applet below, you need to go 
+<a href = "http://java.sun.com/getjava/download.html">here</a>.<p>
+<applet code="ModFit.class" archive="ModFit.jar" width=800 height=400>
+</applet><p>
+</center>
+Instructions:
+<ol>
+<li>Type values into boxes marked "X" and "Y".</li>
+<li>Click "Add".</li>
+<li>Repeat until all values are entered.<br>
+    Clicking "Undo" will remove last value entered.</li>
+<li>Select desired model.</li>
+<li>Click "Calculate Parameters".</li>
+<li>To start over, click "Clear".</li>
+</ol>
+Features:
+<ul>
+<li>Values are stored in a linked list, so data can be of any arbitrary length.
+</li>
+<li>Support for floating-point values up to 1.79769 x 10<sup>308</sup>.</li>
+<li>On-the-fly data transformation.</li>
+<li>Support for tab-over data entry (sounds trivial, I know, but it was hard to implement (considerably easier with this version) ).</li>
+</ul>
+What's New?
+<ul>
+<li>Mostly functional changes.  A few bugs have been corrected, most notably the Cubic model.
+A lot of functionality has been transferred to the Formula class and subclasses which are now
+more universal so they can be easily used in other projects.</li>
+<p>(Ver 0.4):<br>
+<li>Several new polynomial models have been added, with support available for many more
+should there be a need for them.  The Formula class has now contains many generic methods
+for manipulating data and calculating parameters.  Each overriding class now calculates its
+own parameters from arrays of data.</li>
+<p>(Ver 0.3):<br>
+<li>Graphical Representation.  Now when you type in your data, the program plots the
+points onto a separate frame and creates a graph of the calculated model.  Much of this
+was accomplished through the creation of the abstract class "Formula" which is then 
+overloaded as several specific formula types, any of which can be passed to the 
+"plotLine" method for drawing the model to the screen.  Adding new models should be 
+no more difficult than defining a new class.</li>
+<li>The scatterplot resizes itself to accomodate the data.</li>
+<li>New tabbed layout design, should allow me to add new features without having to
+redesign the entire interface.  Just add a new tab.</li>
+<li>The program now calculates minimum and maximum deviations from the model.  This
+should be useful for determining which of the various models best fits the data.</li>
+<p>(Ver 0.2):<br>
+<li>By using provided classes rather than writing them myself, I was able to optimize much of the program.  The entire applet is now approximately half the size of version 0.1.</li>
+<li>There's now an "Undo" button, which allows you to delete the last entry in case you make a mistake.</li>
+</ul>
+Plans for version 0.6:
+<ul>
+<li>File system support.  Soon you should be able to load and save data to and from a  file rather than typing it all in by hand every time (this has turned out to be more 
+difficult than I thought, as Java has very strict file system accessibility 
+restrictions for applets).</li>
+<li>Cubic Splines</li>
+</ul>
+Questions? Comments? Insults? <a href="mailto://scott.meyer@campus.fontbonne.edu">email
+</a> me.
+
+</html>
