@@ -1,17 +1,17 @@
 import java.util.Arrays;
 
-public class Splines extends Formula
+public class Cubicspl extends Formula
    {
 
-   private Cubic[] splines;
-   private double[] limits;
+   private final Cubic[] splines;
+   private final double[] limits;
 
-   public Splines( Double[] x, Double[] y )
+   public Cubicspl( Double[] x, Double[] y )
       {
       super();
       limits = new double[ x.length ];
       for( int i = 0; i < x.length; i++ )
-         limits[i] = x[i].doubleValue();
+         limits[i] = x[i];
       //Arrays.sort( limits );
       splines = new Cubic[ x.length - 1 ];
       for( int i = 0; i < splines.length; i++ )

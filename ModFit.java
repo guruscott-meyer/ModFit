@@ -21,7 +21,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import java.io.*;
-public class ModFit extends Object implements ActionListener, ItemListener
+public class ModFit implements ActionListener, ItemListener
    {
    
    private static final String buttonLabels[] = { "Add", "Undo", "Clear"/*, "Open", "Save" */};
@@ -37,27 +37,38 @@ public class ModFit extends Object implements ActionListener, ItemListener
    static final int RESOLUTION = 100;
    static final int SCALE_VALUE = 10;
 
-   private ArrayList xList, yList;
-   private int mode, splineIndex;
-   private double graph[];
-   private double xScale, yScale;
+   private static ArrayList xList, yList;
+   private static int mode, splineIndex;
+   private static double graph[];
+   private static double xScale, yScale;
    private Formula form;
 
    //JFileChooser chooser;
-   JTabbedPane cardPane;
-   JPanel valPanel, dataFieldPanel, dataButtonPanel; 
-   Box mainBox, radioBox, fieldBox, dataBox;
-   JButton listButton[], calc, sNext; 
-   JCheckBox sAll;
-   JLabel inputLabel[]; 
-   JTextField outputField[], inputField[];
-   JRadioButton modeButton[];
-   JScrollPane dataPane;
-   JTextArea dataArea;
-   ButtonGroup modes;
-   GraphPanel mainGraphPanel;
+   static JTabbedPane cardPane;
+   static JPanel valPanel, dataFieldPanel, dataButtonPanel; 
+   static Box mainBox, radioBox, fieldBox, dataBox;
+   static JButton listButton[], calc, sNext; 
+   static JCheckBox sAll;
+   static JLabel inputLabel[]; 
+   static JTextField outputField[], inputField[];
+   static JRadioButton modeButton[];
+   static JScrollPane dataPane;
+   static JTextArea dataArea;
+   static ButtonGroup modes;
+   static GraphPanel mainGraphPanel;
 
-   public static void Main()
+   public static void main(String[] args) {
+        //Schedule a job for the event dispatching thread:
+        //creating and showing this application's GUI
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                createAndShowGUI();
+            }
+    });
+    
+    }
+   
+   public static void createAndShowGUI()
       {
       xList = new ArrayList();
       yList = new ArrayList();
